@@ -294,47 +294,51 @@ $title = ($_COOKIE['login_cookie'] == $_GET['username']) ? "マイページ" : "
 							print('<p class="user_profile_text">' .$row['introduction'] .'</p>');
 						}
 						else {
-							print('<p class="user_profile_text">ここにプロフィール本文が入りますここにプロフィール本文が入りますここにプロフィール本文が入りますここにプロフィール本文が入りますここにプロフィール本文が入りますここにプロフィール本文が入りますここにプロフィール本文が入りますここにプロフィール本文が入ります</p>');
+							print('<p class="user_profile_text" style="color: #b2b2b2;">プロフィールが登録されていません</p>');
 						}
 
 						print('<div class="user_profile_column_container">');
 							print('<div class="user_profile_row">');
+								print('<div class="user_profile_column1">年代</div>');
 
 								if($row["bdate"]) {
-									print('<div class="user_profile_column1">年代</div><div class="user_profile_column2">' .$row['bdate'] .'</div>');
+									print('<div class="user_profile_column2">' .$row['bdate'] .'</div>');
 								}
 								else {
-									print('<div class="user_profile_column1">年代</div><div class="user_profile_column2">ここに年代(例:30代)が入ります</div>');
+									print('<div class="user_profile_column2" style="color: #b2b2b2;">--</div>');
 								}
 
 							print('</div>');
 							print('<div class="user_profile_row">');
+								print('<div class="user_profile_column1">性別</div>');
 
 								if($row["sex"]) {
-									print('<div class="user_profile_column1">性別</div><div class="user_profile_column2">' .$row['sex'] .'</div>');
+									print('<div class="user_profile_column2">' .$row['sex'] .'</div>');
 								}
 								else {
-									print('<div class="user_profile_column1">性別</div><div class="user_profile_column2">ここに性別が入ります</div>');
+									print('<div class="user_profile_column2" style="color: #b2b2b2;">--</div>');
 								}
 
 							print('</div>');
 							print('<div class="user_profile_row">');
+								print('<div class="user_profile_column1">現住所(都道府県)</div>');
 
 								if($row["pref"]) {
-									print('<div class="user_profile_column1">現住所(都道府県)</div><div class="user_profile_column2">' .$row["pref"] .'</div>');
+									print('<div class="user_profile_column2">' .$row["pref"] .'</div>');
 								}
 								else {
-									print('<div class="user_profile_column1">現住所(都道府県)</div><div class="user_profile_column2">ここに都道府県名が入ります</div>');
+									print('<div class="user_profile_column2" style="color: #b2b2b2;">--</div>');
 								}
 
 							print('</div>');
 							print('<div class="user_profile_row">');
+								print('<div class="user_profile_column1">利酒資格</div>');
 
 								if($row["certification"]) {
-									print('<div class="user_profile_column1">利酒資格</div><div class="user_profile_column2">' .$row["certification"] .'</div>');
+									print('<div class="user_profile_column2">' .$row["certification"] .'</div>');
 								}
 								else {
-									print('<div class="user_profile_column1">利酒資格</div><div class="user_profile_column2">ここに資格名が入ります</div>');
+									print('<div class="user_profile_column2" style="color: #b2b2b2;">--</div>');
 								}
 
 							print('</div>');
@@ -352,7 +356,7 @@ $title = ($_COOKIE['login_cookie'] == $_GET['username']) ? "マイページ" : "
           // お気に入り酒蔵
           print('<li>');
             print('<span><svg class="user_activity_info_brewery2016"><use xlink:href="#brewery2016"/></svg>お気に入り酒蔵</span>');
-            print('<span id="user_activity_sakagura">no code</span>');
+            print('<span id="user_activity_sakagura"></span>');
           print('</li>');
 					//お気に入り飲食店
           /*print('<li>');
@@ -378,7 +382,7 @@ $title = ($_COOKIE['login_cookie'] == $_GET['username']) ? "マイページ" : "
 
 		if($loginname == $row["email"]) {
 			print('<ul class="user_buttons">');
-			  print('<li id="user_mypage"><a href="user_view_config.php" class="mypage_config_link"><svg class="user_buttons_config1616"><use xlink:href="#config1616"/></svg>マイページ設定(自分のページのみ表示)</a></li>');
+			  print('<li id="user_mypage"><a href="user_view_config.php" class="mypage_config_link"><svg class="user_buttons_config1616"><use xlink:href="#config1616"/></svg>マイページ設定</a></li>');
 				  /*非表示中print('<li id="user_follow"><svg class="user_buttons_pin1616"><use xlink:href="#pin1616"/></svg>フォロー(他人のページのみ表示)</li>');
 			  print('<li id="user_trophy"><svg class="user_buttons_trophy1216"><use xlink:href="#trophy1216"/></svg>トロフィー</li>');*/
 			print("</ul>");
@@ -390,10 +394,10 @@ $title = ($_COOKIE['login_cookie'] == $_GET['username']) ? "マイページ" : "
 			$res = executequery($db, $sql);
 
 			if($rd = getnextrow($res)) {
-				print('<li id="user_follow" style="background:linear-gradient(#EDCACA, #ffffff); border:1px solid #FF4545; transition: 0.3s"><a href="#" class="mypage_config_link"><svg class="user_buttons_config1616"><use xlink:href="#config1616"/></svg>お気に入り</a></li>');
+				print('<li id="user_follow" style="background:linear-gradient(#EDCACA, #ffffff); border:1px solid #FF4545; transition: 0.3s"><svg class="user_buttons_pin1616" style="fill:#FF4545"><use xlink:href="#pin1616"/></svg><span>フォロー中</span></li>');
 			}
 			else {
-				print('<li id="user_follow"><span class="mypage_config_link"><svg class="user_buttons_config1616"><use xlink:href="#config1616"/></svg>お気に入り</span></li>');
+				print('<li id="user_follow"><svg class="user_buttons_pin1616"><use xlink:href="#pin1616"/></svg><span>フォロー</span></li>');
 			}
 
 			print("</ul>");
@@ -837,7 +841,7 @@ $title = ($_COOKIE['login_cookie'] == $_GET['username']) ? "マイページ" : "
 
 								////////////////////////////////////////////////////////////
 									print('<div id="sakagurapage">');
-			
+
 										if($count_result > 25) {
 
 											print('<button id="prev_sakagura" class="search_button">前の'.$p_max .'件</button>');
@@ -1345,7 +1349,7 @@ $(function() {
 									if(sake[i].sake_rank) {
 										innerText += '<span class="review_sake_rate">' + sake[i].sake_rank.toFixed(1) + '</span>';
 									} else {
-										innerText += '<span class="review_sake_rate" style="color: #d2d2d2;">--</span>';
+										innerText += '<span class="review_sake_rate" style="color: #b2b2b2;">--</span>';
 									}
 								innerText += '</div>';
 
@@ -1397,9 +1401,15 @@ $(function() {
 									innerText += '<div class="tastes">';
 										innerText += '<div class="tastes_item">';
 											innerText += '<div class="tastes_title"><svg class="tastes_item_flavor1816"><use xlink:href="#flavor1816"/></svg>フレーバー</div>';
-											innerText += '<div class="taste_value_flavor">' + GetFlavorNames(flavors) + '</div>';
-											//innerText += '<div class="taste_value_flavor">' + flavors + '</div>';
-											//alert("innerText2:" + innerText);
+											innerText += '<div class="taste_value_flavor">';
+
+												if(sake[i].flavor != "") {
+													innerText += GetFlavorNames(flavors);
+												} else {
+													innerText += '<span style="color: #b2b2b2;">--</span>';
+												}
+
+											innerText += '</div>';
 										innerText += '</div>';
 
 										////////////////////////////////////////
@@ -1416,7 +1426,7 @@ $(function() {
 													if(tastes_values[0] != 0) {
 														innerText += parseFloat(tastes_values[0]).toFixed(1);
 													} else {
-														innerText += '--';
+														innerText += '<span style="color: #b2b2b2;">--</span>';
 													}
 
 												innerText += '</div>';
@@ -1436,7 +1446,7 @@ $(function() {
 													if(tastes_values[1] != 0) {
 														innerText += parseFloat(tastes_values[1]).toFixed(1);
 													} else {
-														innerText += '--';
+														innerText += '<span style="color: #b2b2b2;">--</span>';
 													}
 
 												innerText += '</div>';
@@ -1456,7 +1466,7 @@ $(function() {
 													if(tastes_values[2] != 0) {
 														innerText += parseFloat(tastes_values[2]).toFixed(1);
 													} else {
-														innerText += '--';
+														innerText += '<span style="color: #b2b2b2;">--</span>';
 													}
 
 												innerText += '</div>';
@@ -1476,7 +1486,7 @@ $(function() {
 													if(tastes_values[3] != 0) {
 														innerText += parseFloat(tastes_values[3]).toFixed(1);
 													} else {
-														innerText += '--';
+														innerText += '<span style="color: #b2b2b2;">--</span>';
 													}
 
 												innerText += '</div>';
@@ -1496,7 +1506,7 @@ $(function() {
 													if(tastes_values[4] != 0) {
 														innerText += parseFloat(tastes_values[4]).toFixed(1);
 													} else {
-														innerText += '--';
+														innerText += '<span style="color: #b2b2b2;">--</span>';
 													}
 
 												innerText += '</div>';
@@ -1516,7 +1526,7 @@ $(function() {
 													if(tastes_values[5] != 0) {
 														innerText += parseFloat(tastes_values[5]).toFixed(1);
 													} else {
-														innerText += '--';
+														innerText += '<span style="color: #b2b2b2;">--</span>';
 													}
 
 												innerText += '</div>';
@@ -1536,7 +1546,7 @@ $(function() {
 													if(tastes_values[6] != 0) {
 														innerText += parseFloat(tastes_values[6]).toFixed(1);
 													} else {
-														innerText += '--';
+														innerText += '<span style="color: #b2b2b2;">--</span>';
 													}
 
 												innerText += '</div>';
@@ -1556,7 +1566,7 @@ $(function() {
 													if(tastes_values[7] != 0) {
 														innerText += parseFloat(tastes_values[7]).toFixed(1);
 													} else {
-														innerText += '--';
+														innerText += '<span style="color: #b2b2b2;">--</span>';
 													}
 
 												innerText += '</div>';
@@ -1971,11 +1981,13 @@ $(function() {
 									////////////////////////////////////////////////
 									innerHTML += '<div class="spec_item">';
 										innerHTML += '<div class="spec_title"><svg class="spec_item_tokuteimeisho1616"><use xlink:href="#tokuteimeisho1616"/></svg>特定名称</div>';
-										if(sake[i].special_name != null) {
-											innerHTML += '<div class="spec_info">' + sake[i].special_name + '</div>';
-										} else {
-											innerHTML += '<div class="spec_info">--</div>';
-										}
+										innerHTML += '<div class="spec_info">';
+											if(sake[i].special_name != "") {
+												innerHTML += sake[i].special_name;
+											} else {
+												innerHTML += '<span style="color: #b2b2b2;">--</span>';
+											}
+										innerHTML += '</div>';
 									innerHTML += '</div>';
 
 									/////////////////////////////////////////////////
@@ -1983,11 +1995,13 @@ $(function() {
 									////////////////////////////////////////////////
 									innerHTML += '<div class="spec_item">';
 										innerHTML += '<div class="spec_title"><svg class="spec_item_alc1616"><use xlink:href="#alc1616"/></svg>Alc度数</div>';
-										if(sake[i].alcohol_level) {
-											innerHTML += '<div class="spec_info">' + sake[i].alcohol_level + '</div>';
-										} else {
-											innerHTML += '<div class="spec_info">--</div>';
-										}
+										innerHTML += '<div class="spec_info">';
+											if(sake[i].alcohol_level) {
+												innerHTML += sake[i].alcohol_level;
+											} else {
+												innerHTML += '<span style="color: #b2b2b2;">--</span>';
+											}
+										innerHTML += '</div>';
 									innerHTML += '</div>';
 
 									/////////////////////////////////////////////////
@@ -1995,11 +2009,13 @@ $(function() {
 									////////////////////////////////////////////////
 									innerHTML += '<div class="spec_item">';
 										innerHTML += '<div class="spec_title"><svg class="spec_item_rice1616"><use xlink:href="#rice1616"/></svg>原料米</div>';
-										if(sake[i].rice_used) {
-											innerHTML += '<div class="spec_info">' + sake[i].rice_used + '</div>';
-										} else {
-											innerHTML += '<div class="spec_info">--</div>';
-										}
+										innerHTML += '<div class="spec_info">';
+											if(sake[i].rice_used) {
+												innerHTML += sake[i].rice_used;
+											} else {
+												innerHTML += '<span style="color: #b2b2b2;">--</span>';
+											}
+										innerHTML += '</div>';
 									innerHTML += '</div>';
 
 									/////////////////////////////////////////////////
@@ -2007,11 +2023,13 @@ $(function() {
 									////////////////////////////////////////////////
 									innerHTML += '<div class="spec_item">';
 										innerHTML += '<div class="spec_title"><svg class="spec_item_cleanedrice1616"><use xlink:href="#cleanedrice1616"/></svg>精米歩合</div>';
-										if(sake[i].seimai_level) {
-											innerHTML += '<div class="spec_info">' + sake[i].seimai_level + '</div>';
-										} else {
-											innerHTML += '<div class="spec_info">--</div>';
-										}
+										innerHTML += '<div class="spec_info">';
+											if(sake[i].seimai_level) {
+												innerHTML += sake[i].seimai_level;
+											} else {
+												innerHTML += '<span style="color: #b2b2b2;">--</span>';
+											}
+										innerHTML += '</div>';
 									innerHTML += '</div>';
 
 									/////////////////////////////////////////////////
@@ -2020,22 +2038,22 @@ $(function() {
 									innerHTML += '<div class="spec_item">';
 										innerHTML += '<div class="spec_title"><svg class="spec_item_nihonshudo1616"><use xlink:href="#nihonshudo1616"/></svg>日本酒度</div>';
 										innerHTML += '<div class="spec_info">';
-
-											if(sake[i].jsake_level) {
+											if(sake[i].jsake_level != "") {
 												var syudo_array = sake[i].jsake_level.split(',');
-
-												if(syudo_array[0] != null && syudo_array[1] != null) {
-													innerHTML += parseFloat(syudo_array[0]).toFixed(1) + "～" + parseFloat(syudo_array[1]).toFixed(1);
-												} else if(syudo_array[0] && syudo_array[1] == null) {
+												if(syudo_array.length == 1) {
 													innerHTML += parseFloat(syudo_array[0]).toFixed(1);
 												} else {
-													innerHTML += '--';
+													if(syudo_array[0] == syudo_array[1]) {
+														innerHTML += parseFloat(syudo_array[0]).toFixed(1);
+													} else if(syudo_array[0] != "" && syudo_array[1] != "") {
+														innerHTML += parseFloat(syudo_array[0]).toFixed(1) + '～' + parseFloat(syudo_array[1]).toFixed(1);
+													} else if(syudo_array[0] != "" && syudo_array[1] == "") {
+														innerHTML += parseFloat(syudo_array[0]).toFixed(1);
+													}
 												}
+											} else {
+												innerHTML += '<span style="color: #b2b2b2;">--</span>';
 											}
-											else {
-												innerHTML += '--';
-											}
-
 										innerHTML += "</div>";
 									innerHTML += "</div>";
 									/////////////////////////////////////////////////
@@ -2402,7 +2420,14 @@ $(function() {
 										///////////
 										innerHTML += '<div class="spec_item">';
 										innerHTML += '<div class="spec_title"><svg class="spec_item_bottle1616"><use xlink:href="#bottle1616"/></svg>代表銘柄</div>';
-										innerHTML += '<div class="spec_info">' + sakagura[i].brand + '</div>';
+										innerHTML += '<div class="spec_info">';
+
+										if(sakagura[i].brand)
+											innerHTML += sakagura[i].brand;
+										else
+											innerHTML += '<span style="color: #b2b2b2;">--</span>';
+
+										innerHTML += '</div>';
 										innerHTML += '</div>';
 
 										/////////////////////////////////////////////////
@@ -2412,11 +2437,11 @@ $(function() {
 										innerHTML += '<div class="spec_info">';
 
 										if(sakagura[i].observation == 1)
-											innerHTML += '可'
+											innerHTML += '可';
 										else if(sakagura[i].observation == 2)
-											innerHTML += '不可'
+											innerHTML += '不可';
 										else
-											innerHTML += '--'
+											innerHTML += '<span style="color: #b2b2b2;">--</span>';
 
 										innerHTML += '</div>';
 										innerHTML += '</div>';
@@ -2428,11 +2453,11 @@ $(function() {
 										innerHTML += '<div class="spec_info">';
 
 										if(sakagura[i].direct_sale == 1)
-											innerHTML += 'あり'
+											innerHTML += 'あり';
 										else if(sakagura[i].direct_sake == 2)
-											innerHTML += 'なし'
+											innerHTML += 'なし';
 										else
-											innerHTML += '--'
+											innerHTML += '<span style="color: #b2b2b2;">--</span>';
 
 										innerHTML += '</div>';
 										innerHTML += '</div>';
@@ -2798,7 +2823,7 @@ $(function() {
 
 						for(i = 0; i < users.length; i++) {
 
-							var path = "images/icons/noimage160.svg";
+							var path = "images/icons/noimage_user30.svg";
 							var innerHTML = "";
 
 							if(users[i].imagefile && users[i].imagefile != "") {
@@ -3083,6 +3108,14 @@ jQuery(document).ready(function($) {
 	$('#user_activity_nonda').text($('#count_sake').val());
 	$('#user_activity_sakagura').text($('#count_sakagura').val());
 
+	if($('#user_activity_nonda').text() == '--') {
+		$("#user_activity_nonda").css('color', '#b2b2b2');
+	}
+
+	if($('#user_activity_sakagura').text() == '--') {
+		$("#user_activity_sakagura").css('color', '#b2b2b2');
+	}
+
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -3159,12 +3192,12 @@ jQuery(document).ready(function($) {
 			var in_disp_from = 0;
 			var in_disp_to = 25;
 			var bCount = 1;
-			var my_url = "?search_type=" + category + "&from=" + in_disp_from; 
+			var my_url = "?search_type=" + category + "&from=" + in_disp_from;
 			var anchor_user = <?php echo json_encode($_GET['username']); ?>;
 			var data = "username=" + username;
 
 			if(anchor_user && anchor_user != "")
-				my_url += "?username=" + anchor_user; 
+				my_url += "?username=" + anchor_user;
 
 			my_url += "&count_query=1" + href;
 
@@ -3260,12 +3293,16 @@ jQuery(document).ready(function($) {
 			{
 				$("#user_follow").css('background', 'linear-gradient(#EDCACA, #ffffff)');
 				$("#user_follow").css('border', '1px solid #FF4545');
+				$(".user_buttons_pin1616").css('fill', '#FF4545');
+				$("#user_follow span").text('フォロー中');
 			}
 			else if(str == "unfollowed")
 			{
 				$("#user_follow").css('background', 'linear-gradient(#e6e6e6, #ffffff)');
 				$("#user_follow").css('border', '1px solid #d2d2d2');
 				$("#user_follow").css('color', '#666666');
+				$(".user_buttons_pin1616").css('fill', '#b2b2b2');
+				$("#user_follow span").text('フォロー');
 			}
 		}).fail(function(data){
 			alert("This is Error");
