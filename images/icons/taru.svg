@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 12.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+]>
+<svg  version="1.1" id="taru" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="40" height="40" viewBox="0 0 40 40"
+	 overflow="visible" enable-background="new 0 0 40 40" xml:space="preserve">
+<path fill="#8B5C29" d="M36,0H4C1.8,0,0,1.8,0,4v32c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V4C40,1.8,38.2,0,36,0z M36,35
+	c0,0.55-0.45,1-1,1H5c-0.55,0-1-0.45-1-1V5c0-0.55,0.45-1,1-1h30c0.55,0,1,0.45,1,1V35z M10.833,34h18.334c0,0,0.69-1.518,1.225-5
+	H9.608C10.142,32.482,10.833,34,10.833,34z M29.167,6H10.833c0,0-0.691,1.518-1.225,5h20.783C29.857,7.518,29.167,6,29.167,6z
+	 M9.351,13C9.146,14.9,9,17.208,9,20s0.146,5.1,0.351,7h21.297C30.855,25.1,31,22.792,31,20s-0.145-5.1-0.352-7H9.351z"/>
+</svg>

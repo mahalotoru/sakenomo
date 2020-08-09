@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 12.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+]>
+<svg  version="1.1" id="yamahaimoto" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="40" height="40" viewBox="0 0 40 40"
+	 overflow="visible" enable-background="new 0 0 40 40" xml:space="preserve">
+<path fill="#ED8A2F" d="M22,11c1.656,0,3-1.344,3-3s-1.344-3-3-3s-3,1.344-3,3S20.344,11,22,11z M22,17c0,0.828,0.672,1.5,1.5,1.5
+	S25,17.828,25,17s-0.672-1.5-1.5-1.5S22,16.172,22,17z M17.5,16c1.104,0,2-0.896,2-2s-0.896-2-2-2s-2,0.896-2,2S16.396,16,17.5,16z
+	 M7,24h2v10h22V24h2v-4H7V24z M36,0H4C1.8,0,0,1.8,0,4v32c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V4C40,1.8,38.2,0,36,0z M36,35
+	c0,0.55-0.45,1-1,1H5c-0.55,0-1-0.45-1-1V5c0-0.55,0.45-1,1-1h30c0.55,0,1,0.45,1,1V35z"/>
+</svg>
